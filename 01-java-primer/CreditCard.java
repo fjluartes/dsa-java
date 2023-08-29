@@ -1,10 +1,9 @@
 // Credit Card example program
 public class CreditCard {
-    // class details
-
+    // initializations here
 
     // main method
     public static void main(String[] args) {
-        System.out.println("Credit Card main method");
+        System.out.println("Credit Card program");
     }
 }
