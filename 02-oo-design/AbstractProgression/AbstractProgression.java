@@ -20,5 +20,5 @@ public abstract class AbstractProgression {
         System.out.println();
     }
 
-    protected abstract void advance();
+    protected abstract void advance(); // no method body for abstract
 }
