@@ -23,10 +23,24 @@ public class CaesarCipher {
 
     // returns transformation fo original String using given code
     private String transform(String original, char[] code) {
-        // code to transform
+        char[] msg = original.toCharArray();
+        for (int k = 0; k < msg.length; k++) {
+            if (Character.isUpperCase(msg[k])) {
+                int j = msg[k] - 'A';
+                msg[k] = code[j];
+            }
+        }
+        return new String(msg);
     }
     
     public static void main(String[] args) {
-        System.out.println("Caesar Cipher");
+        CaesarCipher cipher = new CaesarCipher(3); // Encrypt = DEF...
+        System.out.println("Encryption code = " + new String(cipher.encoder));
+        System.out.println("Decryption code = " + new String(cipher.decoder));
+        String message = "THE EAGLE IS IN PLAY; MEET AT JOE'S.";
+        String coded = cipher.encrypt(message);
+        System.out.println("Secret: " + coded);
+        String answer = cipher.decrypt(coded);
+        System.out.println("Message: " + answer); // should be plain text again
     }
 }
