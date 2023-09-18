@@ -21,8 +21,38 @@ public class SinglyLinkedList<E> { // Java generics
         // access methods
         public int size() { return size; }
         public boolean isEmpty() { return size == 0; }
-        public E first() {
+        public E first() { // returns (but does not remove) first element
             if (isEmpty) return null;
+            return head.getElement();
+        }
+        public E last() { // returns (but does not remove) last element
+            if (isEmpty()) return null;
+            return tail.getElement();
+        }
+        // update methods
+        public void addFirst(E e) { // adds element e to front of list
+            head = new Node<>(e, head);
+            if (size == 0) 
+                tail = head;
+            size++;
+        }
+        public void addLast(E e) { // adds element e to back of list
+            Node<E> newest = new Node<>(e, null);
+            if (isEmpty())
+                head = newest;
+            else
+                tail.setNext(newest);
+            tail = newest;
+            size++;
+        }
+        public E removeFirst() {
+            if (isEmpty()) return null;
+            E answer = head.getElement();
+            head = head.getNext(); // null if list has only one node
+            size--;
+            if (size == 0)
+                tail = null; // special case; list now empty
+            return answer;
         }
     }
 }
