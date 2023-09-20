@@ -19,4 +19,3 @@ public class CircularlyLinkedList<E> {
         public CircularlyLinkedList() { }
     }
 }
-}
