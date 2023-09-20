@@ -1,5 +1,5 @@
 // Circular Linked List in Java
-public class CircularlyLinkedList<E> {
+public class CircularLinkedList<E> {
     // nested Node class
     private static class Node<E> {
         private E element;    // reference to element stored at this node
